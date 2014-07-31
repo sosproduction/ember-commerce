@@ -37,6 +37,32 @@ var personSchema = new mongoose.Schema({
 var Person = mongoose.model('Person', personSchema);
 
 /**
+ * Address Schema.
+ *
+ * @type {mongoose.Schema}
+ */
+
+var addressSchema = new mongoose.Schema ({
+  firstname: String,
+  lastname: String,
+  address1: String,
+  address2: String,
+  city: String,
+  zipcode: String,
+  phone: String,
+  state_name: String,
+  alternative_phone: String,
+  company: String
+});
+
+/**
+ * Address mongoose model.
+ */
+
+var Address = mongoose.model('Address', addressSchema);
+
+
+/**
  * User Schema.
  *
  * @type {mongoose.Schema}
@@ -150,6 +176,22 @@ app.get('/api/people/:id', function(req, res, next) {
 });
 
 /**
+ * Find address by id.
+ *
+ * @param {string} id
+ * @returns {object} person
+ */
+
+app.get('/api/address/:id', function(req, res, next) {
+  Address.findById(req.params.id, function(err, address) {
+    if (err) return next(err);
+    res.send({ address: address });
+  });
+});
+
+
+
+/**
  * Find all people.
  *
  * @returns {object} person
@@ -161,6 +203,20 @@ app.get('/api/people', function(req, res, next) {
     res.send({ person: people });
   });
 });
+
+/**
+ * Find all addresses.
+ *
+ * @returns {object} address
+ */
+
+app.get('/api/addresses', function(req, res, next) {
+  Address.find(function(err, addresses) {
+    if (err) return next(err);
+    res.send({ address: addresses });
+  });
+});
+
 
 /**
  * Update person by id.
@@ -175,6 +231,21 @@ app.put('/api/people/:id', function(req, res, next) {
     res.send({ person: person });
   });
 });
+
+/**
+ * Update address by id.
+ *
+ * @param {string} id
+ * @returns {object} person
+ */
+
+app.put('/api/addresses/:id', function(req, res, next) {
+  Address.findByIdAndUpdate(req.params.id, req.body.address, function(err, address) {
+    if (err) return next(err);
+    res.send({ address: address });
+  });
+});
+
 
 /**
  * Create new person.
@@ -192,6 +263,22 @@ app.post('/api/people', function(req, res, next) {
 });
 
 /**
+ * Create new address.
+ *
+ * @param {object} person
+ * @returns {object} person
+ */
+
+app.post('/api/addresses', function(req, res, next) {
+  var address = new Address(req.body.address);
+  address.save(function(err) {
+    if (err) return next(err);
+    res.send({ address: address });
+  });
+});
+
+
+/**
  * Delete person by id.
  *
  * @param {string} id
@@ -204,6 +291,21 @@ app.del('/api/people/:id', function(req, res, next) {
     res.send(200);
   });
 });
+
+/**
+ * Delete address by id.
+ *
+ * @param {string} id
+ * @returns 200 OK
+ */
+
+app.del('/api/addresses/:id', function(req, res, next) {
+  Address.findById(req.params.id).remove(function(err) {
+    if (err) return next(err);
+    res.send(200);
+  });
+});
+
 
 /**
  * POST /token

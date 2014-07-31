@@ -1,0 +1,21 @@
+<div class="container">
+  <h3>Address Template</h3>
+
+  <p><strong>First Name:</strong>{{firstname}}</p>
+  <p><strong>Last Name:</strong>{{lastname}}</p>
+  <p><strong>Address1:</strong>{{address1}}</p>
+  <p><strong>Address2:</strong>{{address2}}</p>
+  <p><strong>City:</strong>{{city}}</p>
+  <p><strong>State:</strong>{{state_name}}</p>
+  <p><strong>Zip Code:</strong>{{zipcode}}</p>
+  <p><strong>Phone:</strong>{{phone}}</p>
+  <p><strong>Other Phone:</strong>{{alternative_phone}}</p>
+  <p><strong>Company:</strong>{{company}}</p>
+ 
+
+  <div class="btn-group">
+    {{#link-to "addresses" classNames="btn btn-default"}}<i class="fa fa-long-arrow-left"></i> All Addresses{{/link-to}}
+    {{#link-to "edit_address" model classNames="btn btn-default"}}<i class="fa fa-pencil"></i> Edit{{/link-to}}
+    <a href="#" class="btn btn-default" {{action "destroy"}}><i class="fa fa-trash-o"></i> Destroy</a>
+  </div>
+</div>

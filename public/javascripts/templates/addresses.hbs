@@ -1,0 +1,47 @@
+<div class="container">
+  <h2>Addresses Template</h2>
+
+  
+  <ul class="list-inline">
+    <li>{{#link-to "new_address"}}<i class="fa fa-plus"></i> New Address{{/link-to}}</li>
+  </ul>
+
+  <table class="table table-bordered table-striped">
+    <thead>
+      <th>First Name</th>
+      <th>Last Name</th>
+      <th>Address 1</th>
+      <th>Address 2</th>
+      <th>City</th>
+      <th>State</th>
+      <th>Zip Code</th>
+      <th>company</th>
+      <th>Phone</th>
+      <th>Phone 2</th>
+     
+    </thead>
+    <tbody>
+      {{#each controller}}
+      <tr>
+        <td>{{firstname}}</td>
+        <td>{{lastname}}</td>
+        <td>{{address1}}</td>
+        <td>{{address2}}</td>
+        <td>{{city}}</td>
+        <td>{{state_name}}</td>
+        <td>{{zipcode}}</td>
+         <td>{{company}}</td>
+        <td>{{phone}}</td>
+        <td>{{alternative_phone}}</td>
+       
+        <td>{{#link-to "address" this}}View{{/link-to}}</td>
+      </tr>
+       {{else}}
+      <tr>
+        <td colspan="3" class="warning">No content</td>
+      </tr>
+      {{/each}}
+    </tbody>
+  </table>
+</div>
+

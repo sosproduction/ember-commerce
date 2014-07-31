@@ -1,0 +1,51 @@
+<div class="container">
+  <h3>Edit/Create Address Template</h3>
+
+  <form {{action "save" on="submit"}}>
+    <div class="form-group">
+      <label for="firstname">First Name</label><br>
+      {{view Ember.TextField valueBinding="firstname" id="firstname" classNames="form-control" autofocus="autofocus"}}
+    </div>
+    <div class="form-group">
+      <label for="lastname">Last Name</label>
+      {{view Ember.TextField valueBinding="lastname" id="lastname" classNames="form-control"}}
+    </div>
+    <div class="form-group">
+      <label for="address1">Address1</label>
+      {{view Ember.TextField valueBinding="address1" id="address1" classNames="form-control"}}
+    </div>
+    <div class="form-group">
+      <label for="address2">Address2</label>
+      {{view Ember.TextField valueBinding="address2" id="address2" classNames="form-control"}}
+    </div>
+    <div class="form-group">
+      <label for="city">City</label>
+      {{view Ember.TextField valueBinding="city" id="city" classNames="form-control"}}
+    </div>
+    <div class="form-group">
+      <label for="state_name">State</label>
+      {{view Ember.TextField valueBinding="state_name" id="state_name" classNames="form-control"}}
+    </div>
+    <div class="form-group">
+      <label for="zipcode">Zip Code</label>
+      {{view Ember.TextField valueBinding="zipcode" id="zipcode" classNames="form-control"}}
+    </div>
+    <div class="form-group">
+      <label for="phone">Phone</label>
+      {{view Ember.TextField valueBinding="phone" id="phone" classNames="form-control"}}
+    </div>
+    <div class="form-group">
+      <label for="alternative_phone">Other Phone</label>
+      {{view Ember.TextField valueBinding="alternative_phone" id="alternative_phone" classNames="form-control"}}
+    </div>
+    <div class="form-group">
+      <label for="company">Company</label>
+      {{view Ember.TextField valueBinding="company" id="company" classNames="form-control"}}
+    </div>
+   
+
+    <button class="btn btn-default" type="submit">Save</button>
+    <button {{action "cancel"}} class="btn btn-default">Cancel</button>
+  </form>
+</div>
+

@@ -8,12 +8,16 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" href="#">South of Sleep</a>
+        <a class="navbar-brand" href="#">Nemesis</a>
       </div>
       <div class="navbar-collapse collapse">
         <ul class="nav navbar-nav">
-          <li>{{#link-to "index"}}Home{{/link-to}}</li>
-          <li>{{#link-to "people"}}People{{/link-to}}</li>
+          <li>{{#link-to "people"}}Orders{{/link-to}}</li>
+          <li>{{#link-to "addresses"}}Products{{/link-to}}</li>
+          <li>{{#link-to "addresses"}}Reports{{/link-to}}</li>
+          <li>{{#link-to "addresses"}}Configuration{{/link-to}}</li>
+          <li>{{#link-to "addresses"}}Promotions{{/link-to}}</li>
+          <li>{{#link-to "addresses"}}Users{{/link-to}}</li>
           <li>
               {{#if session.isAuthenticated}}
                   {{#link-to "protected"}}Protected{{/link-to}}
