@@ -1,10 +1,11 @@
 An E-commerce solution based upon Ember/Express/Node/Sass
----------------------------------------------------------
+---------------------------------------------------------  
 
-A beginning prototype to create an ecommerce solution completely from a javascript stack both  
-on front-end and server using Ember for the front-end interaction, Express for handling the  
-server side along with MongoDB and Mongoose for Database interaction alsong with Sass for  
-Styling.   The admin and front-end of the store will be completely written in Javascript
+NEMESIS e-commerce
+(N)ode (E)xpress (M)ongoDB (E)mber (S)ass (I)ntergraed (S)tack
 
-
-
+NEMESIS commerce is the first prototype of an end-to-end ecommerce stack    
+written in Javascript and utilizing Ember.js for the front-end MVC along  
+with Express.js to handle server side operations and routing.  MongoDB  
+is used at the database, but will be database agnostic at some point.  
+SASS is used for CSS/Styling.
